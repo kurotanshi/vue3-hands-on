@@ -67,15 +67,15 @@ const sendMessage = async () => {
   });
 
   // 觸發 AI 回應  
-  await simulateAIResponse();
+  // await simulateAIResponse();
 
-  // const aiResponse = await callOpenAI(newMessage.value);
-  // messages.value.push({
-  //   id: Date.now(),
-  //   content: aiResponse,
-  //   isUser: false,
-  //   timestamp: new Date()
-  // });
+  const aiResponse = await callOpenAI(newMessage.value);
+  messages.value.push({
+    id: Date.now(),
+    content: aiResponse,
+    isUser: false,
+    timestamp: new Date()
+  });
   
   newMessage.value = '';
   scrollToBottom();
